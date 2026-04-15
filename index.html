@@ -8,13 +8,14 @@
   <meta name="apple-mobile-web-app-title" content="INSPIRE" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
-  <!-- WAJIB: ikon iPhone -->
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <!-- WAJIB: ikon iPhone (taruh file apple-touch-icon.png di ROOT repo) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2" />
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png?v=2" />
 
   <title>INSPIRE</title>
 
   <style>
-    body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial; padding: 24px; line-height: 1.5; }
+    body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial; padding:24px; line-height:1.5; }
     .btn { display:inline-block; padding:12px 16px; border-radius:12px; border:1px solid #ddd; text-decoration:none; }
     .muted { opacity:.7; font-size:14px; }
   </style>
@@ -22,8 +23,8 @@
 <body>
   <h2>INSPIRE – HCGA & Legal</h2>
   <p class="muted">iPhone: buka via Safari → Share → Add to Home Screen.</p>
+
   <p><a class="btn" href="https://sites.google.com/view/hcgalegalcenter/home">Buka Portal</a></p>
-  <p class="muted">Jika dibuka dari ikon Home Screen, akan otomatis masuk ke portal.</p>
 
   <script>
     const TARGET = "https://sites.google.com/view/hcgalegalcenter/home";
@@ -31,7 +32,7 @@
       (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) ||
       window.navigator.standalone === true;
 
-    // redirect hanya saat dibuka dari ikon Home Screen
+    // Redirect hanya saat dibuka dari ikon Home Screen
     if (isStandalone) window.location.replace(TARGET);
   </script>
 </body>

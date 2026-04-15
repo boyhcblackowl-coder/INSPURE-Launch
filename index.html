@@ -4,76 +4,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- App-like on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="HCGA Center" />
+  <meta name="apple-mobile-web-app-title" content="INSPIRE" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="application-name" content="HCGA Center" />
 
-  <!-- iOS Home Screen icon (pastikan file ada di root repo) -->
+  <!-- WAJIB: ikon iPhone -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
-  <!-- Optional favicon for browser tab -->
-  <link rel="icon" href="favicon.png" />
-
-  <title>HCGA & Legal Center</title>
+  <title>INSPIRE</title>
 
   <style>
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      padding: 24px;
-      line-height: 1.5;
-    }
-    .card {
-      max-width: 520px;
-      margin: 0 auto;
-      border: 1px solid #e5e5e5;
-      border-radius: 14px;
-      padding: 18px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      text-decoration: none;
-    }
-    .muted { opacity: .7; font-size: 14px; }
-    code { background: #f6f6f6; padding: 2px 6px; border-radius: 6px; }
+    body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial; padding: 24px; line-height: 1.5; }
+    .btn { display:inline-block; padding:12px 16px; border-radius:12px; border:1px solid #ddd; text-decoration:none; }
+    .muted { opacity:.7; font-size:14px; }
   </style>
 </head>
-
 <body>
-  <div class="card">
-    <h2>HCGA & Legal Center</h2>
-    <p class="muted">
-      Untuk iPhone: buka halaman ini via <b>Safari</b> lalu klik <b>Share → Add to Home Screen</b>
-      agar ikon bisa memakai logo.
-    </p>
-
-    <p>
-      <a class="btn" href="https://sites.google.com/view/hcgalegalcenter/home">
-        Buka Portal
-      </a>
-    </p>
-
-    <p class="muted">
-      Jika kamu membuka dari ikon Home Screen, halaman akan otomatis mengarah ke portal.
-    </p>
-  </div>
+  <h2>INSPIRE – HCGA & Legal</h2>
+  <p class="muted">iPhone: buka via Safari → Share → Add to Home Screen.</p>
+  <p><a class="btn" href="https://sites.google.com/view/hcgalegalcenter/home">Buka Portal</a></p>
+  <p class="muted">Jika dibuka dari ikon Home Screen, akan otomatis masuk ke portal.</p>
 
   <script>
     const TARGET = "https://sites.google.com/view/hcgalegalcenter/home";
-
-    // Detect if opened as installed (standalone) app
     const isStandalone =
       (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) ||
-      window.navigator.standalone === true; // iOS lama
+      window.navigator.standalone === true;
 
-    // Redirect ONLY when launched from Home Screen icon
-    if (isStandalone) {
-      window.location.replace(TARGET);
-    }
+    // redirect hanya saat dibuka dari ikon Home Screen
+    if (isStandalone) window.location.replace(TARGET);
   </script>
 </body>
 </html>
